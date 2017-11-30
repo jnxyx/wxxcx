@@ -1,5 +1,5 @@
 {
   "usingComponents": {
-    "t": "../../components/test/t"
+    "t-view": "../../components/test/t"
   }
 }

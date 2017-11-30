@@ -1,8 +1,8 @@
 //index.js
 //获取应用实例
 var indexCtrl = require('../../controllers/index/indexController.js')
-
 const app = getApp()
+
 Page({
   data: {
     motto: 'Hello World',

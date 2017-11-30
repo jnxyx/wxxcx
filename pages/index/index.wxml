@@ -7,9 +7,9 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <t>111</t>
-  <t>222</t>
-  <t>333</t>
+  <t-view></t-view>
+  <t-view></t-view>
+  <t-view></t-view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
