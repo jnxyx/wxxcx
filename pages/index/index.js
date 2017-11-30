@@ -79,5 +79,19 @@ Page({
     indexCtrl.getIndexUser(data2).then((results) => {
       console.log(results)
     })
+
+    indexCtrl.getIndexUser(1).then((results) => {
+      console.log(results)
+      return indexCtrl.getIndexUser(++results)
+    }).then((results) => {
+      console.log(results)
+      return indexCtrl.getIndexUser(++results)
+    }).then((results) => {
+      console.log(results)
+      return indexCtrl.getIndexUser(++results)
+    }).then((results) => {
+      console.log(results)
+      return indexCtrl.getIndexUser(++results)
+    })
   }
 })

@@ -1,2 +1,2 @@
 <!--components/test/t.wxml-->
-<text>components/test/t.wxml</text>
+<text>{{innerText}}</text>

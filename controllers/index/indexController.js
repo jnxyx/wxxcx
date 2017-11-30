@@ -29,7 +29,9 @@ var indexController = {
   },
   getIndexUser: (data) => {
     return indexITF.getIndexUser(data).then((results) => {
-      results = Object.assign({}, results)
+      if (tools.isObject(results)) {
+        results = Object.assign({}, results)
+      }
       return new Promise((resolve) => {
         // 处理 results 数据，整理格式后输出
         if (results && results.code != 200 && tools.isObject(results)) {

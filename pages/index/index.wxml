@@ -7,9 +7,9 @@
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <t-view></t-view>
-  <t-view></t-view>
-  <t-view></t-view>
+  <t-view inner-text="模块一"></t-view>
+  <t-view inner-text="模块二"></t-view>
+  <t-view inner-text="模块三"></t-view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
