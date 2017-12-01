@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/shop/shop"
+    "pages/shop/shop",
+    "pages/login/login"
   ],
   "window": {
     "navigationBarBackgroundColor": "#ffffff",
