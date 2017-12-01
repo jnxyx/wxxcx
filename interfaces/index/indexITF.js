@@ -20,11 +20,11 @@ var itf = require('../interface.js')
 
 var indexITF = {
   getIndexData: (data) => {
-    let url = '/host/' + 'index'
+    let url = '/host/index'
     return itf.post(url, data)
   },
   getIndexUser: (data) => {
-    let url = '/host/' + 'indexUser?username=jn'
+    let url = '/host/indexUser?username=jn'
     return itf.tsPost(url, data)
   }
 }

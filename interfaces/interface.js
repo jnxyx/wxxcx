@@ -7,6 +7,7 @@
  */
 
 var inferface = {
+  host: require('../app-config.js').host,
   get: (url, data) => {
     let options = {
       url: url,
@@ -26,7 +27,7 @@ var inferface = {
   request: (options) => {
     let promise = new Promise((resolve, reject) => {
       let requestArgs = {
-        url: options.url,
+        url: inferface.host + options.url,
         data: options.data,
         header: {},
         method: options.method,
@@ -39,10 +40,7 @@ var inferface = {
     return promise
   },
   tsPost: (url, data) => {
-    let promise = new Promise((resolve) => {
-      resolve(data)
-    });
-    return promise;
+    return Promise.resolve(data);
   },
   resolveRequestData: () => {
     return {}

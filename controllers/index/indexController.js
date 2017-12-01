@@ -18,13 +18,11 @@ var indexITF = require('../../interfaces/index/indexITF.js')
 var indexController = {
   getIndexData: (data) => {
     return indexITF.getIndexData(data).then((results)=>{
-      return new Promise((resolve) => {
-        // 处理 results 数据，整理格式后输出
-        if(results.code != 200){
-          results.data = {}
-        }
-        resolve(results)
-      })
+      // 处理 results 数据，整理格式后输出
+      if (results.code != 200) {
+        results.data = {}
+      }
+      return Promise.resolve(results)
     }, models.failHandle)
   },
   getIndexUser: (data) => {
@@ -32,15 +30,13 @@ var indexController = {
       if (tools.isObject(results)) {
         results = Object.assign({}, results)
       }
-      return new Promise((resolve) => {
-        // 处理 results 数据，整理格式后输出
-        if (results && results.code != 200 && tools.isObject(results)) {
-          results.data = {
-            name: 'admin'
-          }
+      // 处理 results 数据，整理格式后输出
+      if (results && results.code != 200 && tools.isObject(results)) {
+        results.data = {
+          name: 'admin'
         }
-        resolve(results)
-      })
+      }
+      return Promise.resolve(results)
     }, models.failHandle)
   }
 }
