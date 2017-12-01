@@ -1,11 +1,12 @@
 //index.js
 //获取应用实例
 var indexCtrl = require('../../controllers/index/indexController.js')
+const tools = require('../../tools/tools.js')
+const memory = require('../../memory/memory.js')
 const app = getApp()
 
 Page({
   data: {
-    motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')
@@ -44,6 +45,11 @@ Page({
         }
       })
     }
+  },
+  linkToShop: function(e) {
+    wx.navigateTo({
+      url: '/pages/shop/shop',
+    })
   },
   getUserInfo: function(e) {
     console.log(e)
@@ -93,5 +99,13 @@ Page({
       console.log(results)
       return indexCtrl.getIndexUser(++results)
     })
+
+    var copyData = {
+      name: 'xuyunxiang'
+    }
+    console.log('copy 测试:', tools.copy(copyData))
+    console.log('merge 测试:', tools.merge(copyData, {a: 11}))
+
+    memory.setData('totalNum', 11)
   }
 })

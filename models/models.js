@@ -45,7 +45,7 @@ var models = {
       "break": "早餐",
       "lunch": "中餐",
       "supper": "晚餐",
-    }[type + '']
+    }[type]
   },
   failHandle: (fails) => {
     return new Promise((resolve) => {

@@ -1,0 +1,4 @@
+<!--pages/shop/shop.wxml-->
+<text>{{totalNum}}</text>
+<input></input>
+<button bindtap='setTotalNum'>设置</button>

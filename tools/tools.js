@@ -15,11 +15,23 @@ var baseTool = {
   isObject: (arg) => {
     return arg.constructor === Object
   },
-  isKeyEmpty: (arg) => {
-    return tools.isObject(arg) && Object.keys(arg).length > 0
+  isKeyEmptyObject: (arg) => {
+    if(!baseTool.isObject(arg)){
+      throw new Error('参数有误，请传Object类型值')
+    }
+    return Object.keys(arg).length > 0
   },
   isDate: (arg) => {
     return arg.constructor === Date
+  },
+  copy: (object) => {
+    if (!baseTool.isObject(object) && !baseTool.isArray(object)){
+      return object
+    }
+    return JSON.parse(JSON.stringify(object))
+  },
+  merge: (...args) => {
+    return baseTool.copy(Object.assign.apply({}, args))
   }
 }
 
@@ -50,7 +62,7 @@ var dateTool = {
     if (baseTool.isDate(startDate) && baseTool.isDate(endDate)) {
       return endDate - startDate < +timeStamp
     } else {
-      throw new Error('参数有误，请传日期格式数据')
+      throw new Error('参数有误，请传Date类型值')
     }
   }
 }

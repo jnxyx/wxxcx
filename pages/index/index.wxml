@@ -8,8 +8,7 @@
     </block>
   </view>
   <t-view inner-text="模块一"></t-view>
-  <t-view inner-text="模块二"></t-view>
-  <t-view inner-text="模块三"></t-view>
+  <button bindtap='linkToShop'>去商铺页</button>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
