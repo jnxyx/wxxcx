@@ -6,9 +6,29 @@ const memory = require('../../memory/memory.js')
 const app = getApp()
 
 Page({
-  data: {},
+  data: {
+    netStatus: '',
+    netWorkType: ''
+  },
   onLoad: function () {
-    this.getDataFromBack()
+    let self = this
+    wx.getNetworkType({
+      success: function(res) {
+        self.setData({
+          netStatus: 'success',
+          netWorkType: JSON.stringify(res)
+        })
+        console.log('success', res)
+      },
+      fail: function (res) {
+        self.setData({
+          netStatus: 'fail',
+          netWorkType: JSON.stringify(res)
+        })
+        console.log('fail', res)
+      }
+    })
+    // this.getDataFromBack()
   },
   linkToShop: function(e) {
     wx.navigateTo({

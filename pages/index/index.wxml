@@ -2,4 +2,29 @@
 <view class="container">
   <t-view inner-text="模块一"></t-view>
   <button bindtap='linkToShop'>去商铺页</button>
+  <view>{{netStatus}}</view>
+  <view>{{netWorkType}}</view>
+
+
+
+  
+       <view class='head-hi a'>想吃点什么</view>
+      <view class='head-hi b'>想吃点什么</view>
+      <view class='head-hi c'>想吃点什么</view>
+      <view class='head-hi d'>想吃点什么</view>
+      <view class='head-hi e'>想吃点什么</view> 
+      <view class='head-hi f'>想吃点什么</view>
+      <view class='head-hi g'>想吃点什么</view>
+      <view class='head-hi h'>想吃点什么</view>
+      <view class='head-hi i'>想吃点什么</view>
+      <view class='head-hi j'>想吃点什么</view>
+      <view class='head-hi k'>想吃点什么</view>
+      <view class='head-hi l'>想吃点什么</view>
+      <view class='head-hi m'>想吃点什么</view>
+      <view class='head-hi n'>想吃点什么</view>
+      <view class='head-hi o'>想吃点什么</view>
+      <view class='head-hi p'>想吃点什么</view>
+      <view class='head-hi q'>想吃点什么</view>
+      <view class='head-hi r'>想吃点什么</view>
+      <view class='head-hi s'>想吃点什么</view> 
 </view>
