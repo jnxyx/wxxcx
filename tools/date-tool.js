@@ -1,9 +1,9 @@
 // 日期工具
 // 提供日期格式化操作
 // 提供过期验证
-var baseTool = require('./base-tool.js')
+let baseTool = require('./base-tool.js')
 
-var dateTool = {
+let dateTool = {
   // 格式化日期
   formatTime: (date) => {
     const year = date.getFullYear()

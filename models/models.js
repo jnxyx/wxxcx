@@ -15,8 +15,8 @@
  * 注明：该层仅提供支持，不依赖任何模块（建议提供对控制层的支持）
  */
 
-var enumModel = require('./enum-model.js')
-var returnModel = require('./return-model.js')
+let enumModel = require('./enum-model.js')
+let returnModel = require('./return-model.js')
 
-var models = Object.assign({}, enumModel, returnModel)
+let models = Object.assign({}, enumModel, returnModel)
 module.exports = models

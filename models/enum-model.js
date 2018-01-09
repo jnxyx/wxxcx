@@ -1,5 +1,5 @@
 // 枚举模型
-var enumModel = {
+let enumModel = {
   getNameByType: (type) => {
     return {
       "break": "早餐",
