@@ -51,7 +51,6 @@ let inferface = {
       ...data,
       "_platform": inferface.appConfig.platform,
       "_version": inferface.appConfig.version,
-      "_osversion": inferface.appConfig.platform,
       "_device": inferface.appConfig.device,
       "utoken": memory.getData('userInfo') ? memory.getData('userInfo').utoken : ''
     }
