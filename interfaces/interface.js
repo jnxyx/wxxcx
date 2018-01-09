@@ -7,7 +7,7 @@
  */
 const memory = require('../memory/memory.js')
 
-var inferface = {
+let inferface = {
   appConfig: require('../app-config.js'),
   get: (url, data) => {
     let options = {
@@ -34,7 +34,8 @@ var inferface = {
         method: options.method,
         dataType: 'json',
         success: function (res) {
-          resolve(res.data)
+          let data = inferface.resolveResponseData(res.data, options)
+          resolve(data)
         },
         fail: function (res) { reject('') }
       }
@@ -44,7 +45,7 @@ var inferface = {
     })
     return promise
   },
-  // 请求数据 中央处理处理
+  // 请求数据 中央处理
   resolveRequestData: (data) => {
     return {
       ...data,
@@ -55,7 +56,16 @@ var inferface = {
       "utoken": memory.getData('userInfo') ? memory.getData('userInfo').utoken : ''
     }
   },
-  // 请求头  中央处理处理
+  // 响应数据 中央处理
+  resolveResponseData: (data, options) => {
+    let host = inferface.appConfig.host.kitchenHost
+    console.log(' --- host: --- ', host)
+    if (options.url.indexOf(host) > -1 && data.code == 202) {
+      memory.setData('userInfo', {})
+    }
+    return data
+  },
+  // 请求头  中央处理
   resolveRequestHeader: (header) => {
     /*
         这里写请求头过滤代码

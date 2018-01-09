@@ -16,16 +16,17 @@
  *  依赖 interface.js
  */
 
-var itf = require('../interface.js')
+let itf = require('./interface.js')
+let host = require('../app-config.js').host.mainHost
 
-var indexITF = {
+let indexITF = {
   getIndexData: (data) => {
-    let url = '/host/index'
+    let url = `${host}/index`
     return itf.post(url, data)
   },
   getIndexUser: (data) => {
-    let url = '/host/indexUser?username=jn'
-    return itf.tsPost(url, data)
+    let url = `${host}/indexUser`
+    return itf.post(url, data)
   }
 }
 

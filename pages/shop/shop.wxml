@@ -3,5 +3,5 @@
 <view class="container">
   <text>{{totalNum}}</text>
   <input></input>
-  <button bindtap='setTotalNum'>设置</button>
+  <button bindtap='setTotalNum'>N++</button>
 </view>

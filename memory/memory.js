@@ -34,6 +34,23 @@ var memory = {
     if (memory.data.hasOwnProperty(key)) {
       delete memory.data[key]
     }
+  },
+  // 检查用户身份
+  checkUtoken: () => {
+    let utoken = memory.getData('userInfo').utoken
+    if (!utoken) {
+      wx.showModal({
+        title: '提示',
+        content: '身份认证失败，请重新登录',
+        success: function () {
+          wx.navigateTo({
+            url: '/pages/login/login'
+          })
+        }
+      })
+      return false
+    }
+    return true
   }
 }
 

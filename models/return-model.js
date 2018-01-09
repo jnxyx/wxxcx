@@ -1,13 +1,5 @@
 // 回调返回值模型
-var returnModel = {
-  getSuccesData: (data) => {
-    let successData = {
-      data: {},
-      code: 200,
-      msg: '请求成功'
-    }
-    return Object.assign({}, successData, data)
-  },
+let returnModel = {
   getFailData: () => {
     let failData = {
       data: {},
@@ -25,9 +17,7 @@ var returnModel = {
     return Object.assign({}, valiData)
   },
   failHandle: (fails) => {
-    return new Promise((resolve) => {
-      resolve(returnModel.getFailData())
-    })
+    return Promise.resolve(fails || returnModel.getFailData())
   }
 }
 

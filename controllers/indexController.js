@@ -11,11 +11,11 @@
  * 
  * 依赖接口层模块
  */
-var models = require('../../models/models.js')
-var tools = require('../../tools/tools.js')
-var indexITF = require('../../interfaces/index/indexITF.js')
+let models = require('../models/models.js')
+let tools = require('../tools/tools.js')
+let indexITF = require('../interfaces/indexITF.js')
 
-var indexController = {
+let indexController = {
   getIndexData: (data) => {
     return indexITF.getIndexData(data).then((results)=>{
       // 处理 results 数据，整理格式后输出

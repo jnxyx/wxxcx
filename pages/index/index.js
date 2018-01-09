@@ -1,9 +1,7 @@
 //index.js
 //获取应用实例
-var indexCtrl = require('../../controllers/index/indexController.js')
-const tools = require('../../tools/tools.js')
+var indexCtrl = require('../../controllers/indexController.js')
 const memory = require('../../memory/memory.js')
-const app = getApp()
 
 Page({
   data: {
@@ -12,23 +10,7 @@ Page({
   },
   onLoad: function () {
     let self = this
-    wx.getNetworkType({
-      success: function(res) {
-        self.setData({
-          netStatus: 'success',
-          netWorkType: JSON.stringify(res)
-        })
-        console.log('success', res)
-      },
-      fail: function (res) {
-        self.setData({
-          netStatus: 'fail',
-          netWorkType: JSON.stringify(res)
-        })
-        console.log('fail', res)
-      }
-    })
-    // this.getDataFromBack()
+    this.getDataFromBack()
   },
   linkToShop: function(e) {
     wx.navigateTo({
@@ -37,51 +19,12 @@ Page({
   },
   // 数据测试
   getDataFromBack: function() {
-    indexCtrl.getIndexData().then((results)=>{
-      console.log(results)
-    })
-
-    var data1 = {
-      code: 100,
-      data: {
-        name: 'xuyunxiang'
-      }
+    var data = {
+      name: 'jnxyx'
     }
-    indexCtrl.getIndexUser(data1).then((results) => {
-      console.log(data1)
+    indexCtrl.getIndexUser(data).then((results) => {
       console.log(results)
     })
-
-    var data2 = {
-      code: 200,
-      data: {
-        name: 'xuyunxiang'
-      }
-    }
-    indexCtrl.getIndexUser(data2).then((results) => {
-      console.log(results)
-    })
-
-    indexCtrl.getIndexUser(1).then((results) => {
-      console.log(results)
-      return indexCtrl.getIndexUser(++results)
-    }).then((results) => {
-      console.log(results)
-      return indexCtrl.getIndexUser(++results)
-    }).then((results) => {
-      console.log(results)
-      return indexCtrl.getIndexUser(++results)
-    }).then((results) => {
-      console.log(results)
-      return indexCtrl.getIndexUser(++results)
-    })
-
-    var copyData = {
-      name: 'xuyunxiang'
-    }
-    console.log('copy 测试:', tools.copy(copyData))
-    console.log('merge 测试:', tools.merge(copyData, {a: 11}))
-
     memory.setData('totalNum', 11)
   }
 })
