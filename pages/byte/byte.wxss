@@ -1,0 +1,23 @@
+/* pages/byte/byte.wxss */
+page{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  background-color: #000;
+}
+.item{
+  width: 100%;
+  overflow: hidden;
+  letter-spacing: 2rpx;
+  font-size: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  display: flex;
+  color: #ffffff;
+}
+.code{
+  width: 40rpx;
+  height: 40rpx;
+  text-align: center;
+  line-height: 40rpx;
+}

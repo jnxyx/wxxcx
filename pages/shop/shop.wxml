@@ -1,7 +1,0 @@
-<!--pages/shop/shop.wxml-->
-
-<view class="container">
-  <text>{{totalNum}}</text>
-  <input></input>
-  <button bindtap='setTotalNum'>N++</button>
-</view>

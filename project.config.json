@@ -21,12 +21,12 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 0,
 			"list": [
 				{
 					"id": -1,
-					"name": "登录页",
-					"pathName": "pages/login/login",
+					"name": "字节流",
+					"pathName": "pages/byte/byte",
 					"query": ""
 				}
 			]

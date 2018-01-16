@@ -1,0 +1,7 @@
+<!--pages/byte/byte.wxml-->
+<view class="container">
+  <view wx:for='{{byteArray}}' wx:key='byteItem' wx:for-item='byteItem' class='item'>{{byteItem}}
+    <!-- <view wx:for='{{byteItem}}' wx:key='byteCode' wx:for-item='byteCode' class='code'>{{byteCode}}</view>  -->
+  </view>
+</view>
+
